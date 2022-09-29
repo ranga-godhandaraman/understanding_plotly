@@ -2,11 +2,13 @@ import React from 'react';
 import './App.css';
 // import Plotly from 'react-plotly.js'
 import Plot from 'react-plotly.js';
+import BarChart from './barChart';
 
 
 class App extends React.Component {
   render() {
     return (
+      <div>
       <Plot
         data={[
           {
@@ -16,10 +18,17 @@ class App extends React.Component {
             mode: 'lines+markers',
             marker: {color: 'grey'},
           },
-          {type: 'scatter', x: [1, 2, 3], y: [2, 5, 3]},
+          { x: [1, 2, 3], 
+            y: [2, 5, 3],
+            type: 'scatter',
+            marker:{color:'blue'}
+          },
         ]}
         layout={ {width: 600, height: 500, title: 'Plots'} }
       />
+
+      <BarChart/>
+      </div>
     );
   }
 }
